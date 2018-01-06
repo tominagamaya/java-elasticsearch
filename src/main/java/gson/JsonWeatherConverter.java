@@ -130,24 +130,24 @@ public class JsonWeatherConverter {
         Gson gson5 = new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES).create();
         Gson gson6 = new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_DASHES).create();
 
-        System.out.println("キャメルケース                   : " + gson3.toJson(weatherReportGirl));
-        System.out.println("キャメルケース(区切りがスペース)   : " + gson4.toJson(weatherReportGirl));
-        System.out.println("スネークケース                   : " + gson5.toJson(weatherReportGirl));
-        System.out.println("スネークケース(区切りがアンダーバー): " + gson6.toJson(weatherReportGirl));
+        System.out.println("キャメルケース                : " + gson3.toJson(weatherReportGirl));
+        System.out.println("キャメルケース(区切りがスペース): " + gson4.toJson(weatherReportGirl));
+        System.out.println("スネークケース                : " + gson5.toJson(weatherReportGirl));
+        System.out.println("スネークケース(区切りがダッシュ): " + gson6.toJson(weatherReportGirl));
 
         /*
-        キャメルケース                   : {"LastName":"曇後","FirstName":"晴子","Age":23,"StartingTime":{"Hour":5,"Minute":0,"Second":0,"Nano":0}}
-        キャメルケース(区切りがスペース)   : {"Last Name":"曇後","First Name":"晴子","Age":23,"Starting Time":{"Hour":5,"Minute":0,"Second":0,"Nano":0}}
-        スネークケース                   : {"last_name":"曇後","first_name":"晴子","age":23,"starting_time":{"hour":5,"minute":0,"second":0,"nano":0}}
-        スネークケース(区切りがアンダーバー): {"last-name":"曇後","first-name":"晴子","age":23,"starting-time":{"hour":5,"minute":0,"second":0,"nano":0}}
+        キャメルケース                : {"LastName":"曇後","FirstName":"晴子","Age":23,"StartingTime":{"Hour":5,"Minute":0,"Second":0,"Nano":0}}
+        キャメルケース(区切りがスペース): {"Last Name":"曇後","First Name":"晴子","Age":23,"Starting Time":{"Hour":5,"Minute":0,"Second":0,"Nano":0}}
+        スネークケース                : {"last_name":"曇後","first_name":"晴子","age":23,"starting_time":{"hour":5,"minute":0,"second":0,"nano":0}}
+        スネークケース(区切りがダッシュ): {"last-name":"曇後","first-name":"晴子","age":23,"starting-time":{"hour":5,"minute":0,"second":0,"nano":0}}
          */
 
         // @SerializedName付けると形式が変更されない
         /*
-        キャメルケース                   : {"lastName":"曇後","FirstName":"晴子","Age":23,"StartingTime":{"Hour":5,"Minute":0,"Second":0,"Nano":0}}
-        キャメルケース(区切りがスペース)   : {"lastName":"曇後","First Name":"晴子","Age":23,"Starting Time":{"Hour":5,"Minute":0,"Second":0,"Nano":0}}
-        スネークケース                   : {"lastName":"曇後","first_name":"晴子","age":23,"starting_time":{"hour":5,"minute":0,"second":0,"nano":0}}
-        スネークケース(区切りがアンダーバー): {"lastName":"曇後","first-name":"晴子","age":23,"starting-time":{"hour":5,"minute":0,"second":0,"nano":0}}
+        キャメルケース                : {"lastName":"曇後","FirstName":"晴子","Age":23,"StartingTime":{"Hour":5,"Minute":0,"Second":0,"Nano":0}}
+        キャメルケース(区切りがスペース): {"lastName":"曇後","First Name":"晴子","Age":23,"Starting Time":{"Hour":5,"Minute":0,"Second":0,"Nano":0}}
+        スネークケース                : {"lastName":"曇後","first_name":"晴子","age":23,"starting_time":{"hour":5,"minute":0,"second":0,"nano":0}}
+        スネークケース(区切りがダッシュ): {"lastName":"曇後","first-name":"晴子","age":23,"starting-time":{"hour":5,"minute":0,"second":0,"nano":0}}
          */
     }
 }
