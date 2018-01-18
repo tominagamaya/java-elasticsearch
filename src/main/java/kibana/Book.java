@@ -6,7 +6,6 @@ import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 @Data
-@ToString
 @EqualsAndHashCode
 @AllArgsConstructor
 public class Book {
