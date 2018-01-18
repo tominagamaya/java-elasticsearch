@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class JsonWeatherConverter {
-    public static void main(String[] args) {
+    public void run() {
         Weather weather1 = new Weather(1L, null, "今日", "晴れ", 2, 35.6f, 11, 51.8f, "北風が強いので洗濯物に注意するべし", LocalDateTime.of(2018, 1, 6, 5, 0, 0));
         Weather weather2 = new Weather(1L, "東京", "明日", "曇り", 1, 33.8f, 5, 41f, "夕方雨が降るかもしれないので折畳み傘を持つべし", LocalDateTime.of(2018, 1, 7, 5, 0, 0));
         Weather weather3 = new Weather(1L, "東京", "明後日", "雨", 3, 37.4f, 6, 42.8f, "夜になると雨が強くなるので早く帰るべし", LocalDateTime.of(2018, 1, 8, 5, 0, 0));
@@ -26,6 +26,7 @@ public class JsonWeatherConverter {
 
         // Nullの項目は無視される
         Gson gson = new Gson();
+        System.out.println("=== start =====================================================");
         System.out.println("JsonからJavaへ変換(Null無視): " + gson.toJson(weatherList));
         //[{"id":1,"datelabel":"今日","telop":"晴れ","min_temperature":2,"min_fahrenheit":35.6,"max_temperature":11,"max_fahrenheit":51.8,"comment":"北風が強いので洗濯物に注意するべし","yyyymmdd":{"date":{"year":2018,"month":1,"day":6},"time":{"hour":5,"minute":0,"second":0,"nano":0}}},{"id":1,"area":"東京","datelabel":"明日","telop":"曇り","min_temperature":1,"min_fahrenheit":33.8,"max_temperature":5,"max_fahrenheit":41.0,"comment":"夕方雨が降るかもしれないので折畳み傘を持つべし","yyyymmdd":{"date":{"year":2018,"month":1,"day":7},"time":{"hour":5,"minute":0,"second":0,"nano":0}}},{"id":1,"area":"東京","datelabel":"明後日","telop":"雨","min_temperature":3,"min_fahrenheit":37.4,"max_temperature":6,"max_fahrenheit":42.8,"comment":"夜になると雨が強くなるので早く帰るべし","yyyymmdd":{"date":{"year":2018,"month":1,"day":8},"time":{"hour":5,"minute":0,"second":0,"nano":0}}}]
 
@@ -134,6 +135,7 @@ public class JsonWeatherConverter {
         System.out.println("キャメルケース(区切りがスペース): " + gson4.toJson(weatherReportGirl));
         System.out.println("スネークケース                : " + gson5.toJson(weatherReportGirl));
         System.out.println("スネークケース(区切りがダッシュ): " + gson6.toJson(weatherReportGirl));
+        System.out.println("=== end =====================================================");
 
         /*
         キャメルケース                : {"LastName":"曇後","FirstName":"晴子","Age":23,"StartingTime":{"Hour":5,"Minute":0,"Second":0,"Nano":0}}
