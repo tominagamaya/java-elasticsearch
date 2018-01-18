@@ -1,5 +1,23 @@
 out/
-.idea/workspace.xml
-.idea/tasks.xml
-.idea/gradle.xml
-.idea/libraries
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+
+# Idea
+.idea
+*.iml
+*.iws
+*.ipr
+build/
+
+# Gradle
+.gradle
+.gradle/
+!gradle-wrapper.jar
+
+# Other
+*.lock
+*.bin
